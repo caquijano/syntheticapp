@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { Content, Card, CardItem, Text, Body} from 'native-base';
-import {View} from 'react-native';
+import {View, Text} from 'react-native';
 import moment from 'moment';
 import firebase from "firebase/compat/app";
 import "firebase/compat/storage";
@@ -12,16 +11,19 @@ const db = firebase.firestore(firebase)
 
 export default function Reservas(props) {
   const {reservas, setReservas} = props;
+  console.log(reservas)
   return (
-    <View>
-      {reservas.map((item, index) => (
-        <Reserva key={index} item={item} />
-      ))}
-    </View>
+<>
+    {
+      reservas.map((item, index)=>(
+        <Text style={{color:"white"}}>h</Text>
+      ))
+    }
+  </>
   );
 }
 
-export function Reserva(props) {
+/*export function Reserva(props) {
     const {item} = props
     const [boolean, setBoolean] = useState(false)
     const [reloadData, setReloadData] = useState(true)
@@ -81,4 +83,4 @@ export function Reserva(props) {
         }
         </>
     )
-}
+}*/
